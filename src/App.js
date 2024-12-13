@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import QuoteDisplay from './QuoteDisplay';
-import './App.css';
-import logo from './assets/logo.png'; // Importando a logo
+import React, { useState } from 'react'; // Importa React e o hook useState para gerenciamento de estado.
+import QuoteDisplay from './QuoteDisplay'; // Importa o componente que exibe as frases motivacionais.
+import './App.css'; // Importa o arquivo de estilos.
+import logo from './assets/logo.png'; // Importa a logo do app.
 
 const App = () => {
+  // Array com frases motivacionais.
   const quotes = [
     "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
     "Acredite que você pode, e você estará no meio do caminho.",
@@ -37,22 +38,31 @@ const App = () => {
     "As melhores vistas vêm depois das subidas mais difíceis."
   ];
 
+  // useState para armazenar a frase atual que será exibida.
   const [quote, setQuote] = useState("");
 
+  // Função para gerar uma frase aleatória do array.
   const generateQuote = () => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    setQuote(quotes[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * quotes.length); // Gera um índice aleatório.
+    setQuote(quotes[randomIndex]); // Atualiza o estado com a frase correspondente.
   };
 
+  // Renderização do componente principal.
   return (
     <div className="app">
+      {/* Exibe a logo do aplicativo */}
       <img src={logo} alt="App Logo" className="app-logo" />
+      
+      {/* Título do aplicativo */}
       <h1>Frases Motivacionais</h1>
-      {/* Passamos a frase como prop para o componente */}
+      
+      {/* Componente que exibe a frase; o texto é passado como prop */}
       <QuoteDisplay quote={quote} />
+      
+      {/* Botão para gerar uma nova frase */}
       <button onClick={generateQuote}>Nova Frase</button>
     </div>
   );
 };
 
-export default App;
+export default App; // Exporta o componente principal para uso no projeto.
