@@ -53,3 +53,11 @@ button:hover {
   background-color: #5fa9a3;
   transform: scale(1.05);
 }
+
+.app-logo {
+  width: 100px; /* Ajuste o tamanho da logo */
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Deixa a logo circular, se desejar */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+}
