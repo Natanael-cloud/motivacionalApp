@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QuoteDisplay from './QuoteDisplay';
 import './App.css';
+import logo from './assets/logo.png'; // Importando a logo
 
 const App = () => {
   const quotes = [
@@ -45,6 +46,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <img src={logo} alt="App Logo" className="app-logo" />
       <h1>Frases Motivacionais</h1>
       {/* Passamos a frase como prop para o componente */}
       <QuoteDisplay quote={quote} />
